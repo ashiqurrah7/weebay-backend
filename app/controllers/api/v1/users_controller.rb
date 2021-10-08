@@ -38,7 +38,7 @@ module Api
                 user = User.where(email:email).first
                 # render json: user
                 if user.password == password
-                    render json: {message: "Login Successfull", data: user}, status: :ok
+                    render json: user, status: :ok
                 else
                     render json: {message: "Wrong Credentials"}, status: :unauthorized
                 end
